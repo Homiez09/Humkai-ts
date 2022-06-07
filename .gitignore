@@ -1,0 +1,6 @@
+# environment [secret]
+.env
+
+# Folder
+/node_modules
+.bin
