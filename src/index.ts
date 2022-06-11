@@ -1,10 +1,12 @@
 require("dotenv").config();
 
 import { Client, Intents, Collection } from "discord.js";
+import { DiscordTogether } from "discord-together";
 
 declare module "discord.js" {
     export interface Client {
         slash: Collection<unknown, any>;
+        together: DiscordTogether<any>;
     }
 } 
 
@@ -25,9 +27,23 @@ const client = new Client({
 });
 
 client.slash = new Collection();
+client.together = new DiscordTogether(client);
 
 require("./handlers")(client);
 
 (async () => {
     await client.login(process.env.TOKEN);
 })();
+
+process.on('unhandledRejection', (reason, p) => {
+    console.log(reason, p);
+  });
+  process.on('uncaughtException', (err, origin) => {
+    console.log(err, origin);
+  });
+  process.on('uncaughtExceptionMonitor', (err, origin) => {
+    console.log(err, origin);
+  });
+  process.on('multipleResolves', (type, promise, reason) => {
+    console.log(type, promise, reason);
+  });

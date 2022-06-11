@@ -1,0 +1,135 @@
+{
+  "test": "This is a test",
+
+  "error": {
+    "userEmbed": {
+      "title": "`Access Denied`",
+      "description": "`You don't have permission!`"
+    },
+    "botEmbed": {
+      "title": "`Access Denied`",
+      "description": "`I need ${command.botPerms} permission!`",
+      "description2": "`I need ADMINISTRATOR permission!`"
+    },
+    "ownerEmbed": {
+      "title": "`Access Denied`",
+      "description": "`You are not owner`"
+    },
+    "fail": "`Something went wrong!`"
+  },
+
+  "messageCreate": {
+    "rank": {
+      "newData": "`${msg.author} just start from lvl 0`",
+      "msgLvlUp": "`${msg.author} reached lvl ${lvl + 1}`"
+    },
+    "removebg": {
+      "status": {
+        "err401": "`CODE:${error.response.status} invalid api key`",
+        "err402": "`CODE:${error.response.status} No credits remaining`",
+        "err400": "`CODE:${error.response.status} Source image file not found`"
+      }
+    }
+  },
+
+  "ping": {
+    "embed": {
+      "title": "`pong!`",
+      "description": "`Latency is ${Date.now() - interaction.createdTimestamp}ms. API Latency is ${Math.round(client.ws.ping)}ms`"
+    }
+  },
+
+  "delete": {
+    "too_many": "`You can't delete more than 100 message and oldest 2 week.`",
+    "success": "`Successfully deleted ${amount} messages`"
+  },
+
+  "setup": {
+    "lang": {
+      "embed": {
+        "title": "`Installed`",
+        "description": "`Your current language is English.`"
+      }
+    },
+    "auth": {
+      "embed_confirm": {
+        "title": "`Installed`",
+        "field": "`Click <#${channel.id}> to go to the channel."
+      },
+      "embed": {
+        "title": "`Hello! Are you human?`",
+        "description": "`Welcome to ${interaction.guild.name}! 🎈\nSelect the menu to access the server. 🔐`"
+      },
+      "about": {
+        "title": "`About`",
+        "description": "`Create new verify role and then create channel for verify (You can change name of channel).\nuse /setup auth confirm for install.`"
+      },
+      "success_embed": {
+        "title": "`You have been verified!`",
+        "description": "`✅ You passed the verification successfully. You can now access ${interaction.guild.name}!`"
+      }
+    },
+    "create_voice": {
+      "embed_confirm": {
+        "title": "`Installed`",
+        "field": "`Press this <#${channel.id}> to create your private voice channel.`"
+      },
+      "about": {
+        "title": "`About`",
+        "description": "`Create new voice channel when you join will move you to new private voice channel(You can change name of channel).\nuse /setup create-voice confirm for install.`"
+      }
+    },
+    "remove_background": {
+      "embed_confirm": {
+        "title": "`Installed`",
+        "field": "`Click <#${channel.id}> to go to the channel.`"
+      },
+      "about": {
+        "title": "`About`",
+        "description": "`Create new channel for REBG (You can change name of channel).\nuse /setup create-voice confirm for install.`"
+      }
+    },
+    "wordle-game": {
+      "embed_confirm": {
+        "title": "`installed`",
+        "field": "`Click <#${channel.id}> for play.`"
+      },
+      "about": {
+        "title": "`About`",
+        "description": "`Create channel for play wordle game(You can change name of channel).\nuse /setup wordle-game confirm for install.`"
+      }
+    }
+  },
+
+  "youtube": {
+    "fail": "`You must be in voice channel.`"
+  },
+
+  "wordle": {
+    "content1": "`You have to install first (/install wordle-game)",
+    "content2": "`Click <#${channelData.wordle_ID}> to play`",
+    "content3": "`The game is still running. ${wordleData.doing.length}`",
+    "msgGame": {
+      "content1": "`You have to type /wordle to create your game.`",
+      "content2": "`Please enter 5 letter.`",
+      "msgLose": "`Wordle ${wordleData.day} ${wordleData.doing.length}/6 (lose)${output}`",
+      "msgWin": "`Wordle ${wordleData.day} ${wordleData.doing.length}/6 (win)${output}`"
+    }
+  },
+
+  "movie": {
+    "embed1": {
+      "title": "`Major Cineplex | Total ${lengthOfListA}`",
+      "description": "`[Info](https://majorcineplex.com/movie)`"
+    },
+    "embed2": {
+      "title": "`NO INFO`",
+      "description": "`[Info](https://www.google.com)`"
+    }
+  },
+
+  "tts": {
+    "embedOn": "`✅ Tts Status: Enabled | Active: <#${ttsData.channelID}>`",
+    "embedOff": "`❌ Tts Status: Disabled`"
+  }
+}
